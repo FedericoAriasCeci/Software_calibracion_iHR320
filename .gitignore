@@ -1,0 +1,53 @@
+# =====================================================================
+#  Software_calibracióniHR320 — qué NO se sube al repositorio
+#  Regla general: se versiona el software; las mediciones quedan solo
+#  en esta computadora.
+# =====================================================================
+
+# ---------- Mediciones y resultados de análisis ----------------------
+# Todo lo que hay en calibration_data/ es salida del equipo o de los
+# scripts de análisis (CSV, JSON, PNG, slit_sweeps/, session_*/...).
+# Solo se conservan los scripts sueltos de esa carpeta.
+calibration_data/*
+!calibration_data/*.py
+!calibration_data/*.bat
+!calibration_data/README.md
+
+# Red de seguridad: formatos y nombres de datos en cualquier carpeta
+*.csv
+barrido_rendijas_*
+session_*/
+.session.lock
+synthetic_truth.json
+
+# Diagnósticos y registros de ensayos con el iHR320 real
+diagnostico_horiba*.json
+etapa*_*.json
+
+# Gráficos copiados de mediciones dentro del paquete
+spectral_calibration/*.png
+
+# Sesión sintética generada por `python -m spectral_calibration example`
+# (se regenera cuando se quiera)
+spectral_calibration/examples/
+
+# Licencias de EzSpec / HORIBA
+*.lkf
+*.lrf
+
+# ---------- Python y entornos ---------------------------------------
+__pycache__/
+*.py[cod]
+.venv/
+.venv_calibration/
+venv/
+env/
+.pytest_cache/
+
+# ---------- Editores y sistema --------------------------------------
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini
+.DS_Store
+~$*

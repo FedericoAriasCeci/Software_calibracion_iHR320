@@ -1,0 +1,4 @@
+﻿__pycache__/
+*.pyc
+.venv/
+diagnostico_horiba.json
